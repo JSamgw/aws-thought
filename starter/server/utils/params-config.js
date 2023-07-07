@@ -1,0 +1,18 @@
+//This file will return the cofigured param object
+//uuid will generate a unique 36-character alphanumeric string
+const { v4: uuidv4 } = require('uuid');
+
+const params = (fileName) => {
+    const myFile = fileName.originalname.split('.');
+    const fileType = myFile[myFile.length - 1];
+  
+    const imageParams = {
+      Bucket: config.bucket,
+      Key: `${uuidv4()}.${fileType}`,
+      Body: fileName.buffer,
+      ACL: 'public-read', // allow read access to this file
+    };
+  
+    return imageParams;
+  };
+  module.exports = params;
