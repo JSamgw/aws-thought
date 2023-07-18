@@ -1,4 +1,4 @@
-// Load the AWS SDK for Node.js
+//Load the AWS SDK for Node.js
 //This package is responsible for the API that allows the application 
 //to communicate with the web service.
 const AWS = require('aws-sdk');
